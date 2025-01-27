@@ -1,0 +1,44 @@
+<div class="user-list" >
+    <h1>User Management</h1>
+  
+    <div class="actions" >
+      <button (click)="onAddUser()" class="user">Add User</button>
+      <input 
+        type="text" class="search"
+        placeholder="Search by name or email"
+        [(ngModel)]="searchQuery"
+        (input)="onSearch()"
+      />
+    </div>
+  
+    <table>
+      <thead>
+        <tr>
+          <th (click)="onSort('name')">Name</th>
+          <th (click)="onSort('email')">Email</th>
+          <th (click)="onSort('role')">Role</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of filteredUsers">
+          <td>{{ user.name }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.role }}</td>
+          <td>
+            <button (click)="onEditUser(user)">Edit</button>
+            <button (click)="onDeleteUser(user)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <app-user-form
+      *ngIf="selectedUser"
+      [user]="selectedUser"
+      [isEditMode]="isEditMode"
+      (save)="onSaveUser($event)"
+      (cancel)="onCancel()"
+    ></app-user-form>
+  </div>
+  

@@ -1,0 +1,16 @@
+<div class="user-form">
+    <form [formGroup]="userForm" (ngSubmit)="onSave()" class="color">
+      <label for="name">Name</label>
+      <input id="name" formControlName="name" type="text" />
+  
+      <label for="email">Email</label>
+      <input id="email" formControlName="email" type="email" />
+  
+      <label for="role">Role</label>
+      <input id="role" formControlName="role" type="text" />
+  
+      <button type="submit">Save</button>
+      <button type="button" (click)="onCancel()">Cancel</button>
+    </form>
+  </div>
+  

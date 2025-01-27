@@ -1,0 +1,38 @@
+.user-list {
+    table {
+      width: 100%;
+      border-collapse: collapse;
+  
+      th, td {
+        padding: 8px;
+        border: 1px solid #ccc;
+        text-align: left;
+      }
+  
+      th {
+        cursor: pointer;
+        background-color: #f4f4f4;
+      }
+    }
+  
+    .pagination {
+      margin-top: 10px;
+      button {
+        margin: 0 5px;
+        padding: 5px 10px;
+        cursor: pointer;
+  
+        &.active {
+          background-color: #007bff;
+          color: white;
+        }
+      }
+    }
+  }
+  .user{
+    color: darkblue;
+    background-color: rgb(216, 140, 235);
+  }
+.search{
+  background-color: aqua;
+}
